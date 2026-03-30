@@ -1,1 +1,20 @@
-<p>task-list works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Task Status</th>
+            <th>Task Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (task of taskService.tasks(); track task.id) {
+        <tr>
+            <td>{{ task.id }}</td>
+            <td>{{ task.title }}</td>
+            <td>{{ task.completed ? 'Completed' : 'Pending' }}</td>
+            <td>{{ task.createdAt | date }}</td>
+        </tr>
+        }
+    </tbody>
+</table>
