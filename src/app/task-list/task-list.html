@@ -1,6 +1,13 @@
+<h1>Task List</h1>
+
+<p>Add Task Button</p>
+<p>Delete Task Button</p>
+<p>Filter bar here</p>
+
 <table>
     <thead>
         <tr>
+            <th>Select</th>
             <th>Id</th>
             <th>Title</th>
             <th>Task Status</th>
@@ -10,6 +17,7 @@
     <tbody>
         @for (task of taskService.tasks(); track task.id) {
         <tr>
+            <td><input type="checkbox" /></td>
             <td>{{ task.id }}</td>
             <td>{{ task.title }}</td>
             <td>{{ task.completed ? 'Completed' : 'Pending' }}</td>
